@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Simbolos - LPN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f4f6f8;
+            color: #1f2933;
+        }
+        .secao {
+            margin-bottom: 28px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .sucesso {
+            color: #166534;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #d9e2ec;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #102a43;
+            color: #ffffff;
+        }
+        tr:nth-child(even) {
+            background: #f8fbff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resultado da Analise Lexica da LPN</h1>
+
+    <section class="secao">
+        <h2>Status da Analise</h2>
+        <p class="sucesso">Analise concluida com sucesso. Nenhum erro lexico foi encontrado.</p>
+    </section>
+
+    <section class="secao">
+        <h2>Tabela de Simbolos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo do Token</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+        <tr><td>INTEIRO</td><td>inteiro</td></tr>
+        <tr><td>ID</td><td>x</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>REAL</td><td>real</td></tr>
+        <tr><td>ID</td><td>y</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>TEXTO</td><td>texto</td></tr>
+        <tr><td>ID</td><td>mensagem</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>INTEIRO</td><td>inteiro</td></tr>
+        <tr><td>ID</td><td>resultado</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>ID</td><td>x</td></tr>
+        <tr><td>ATRIBUICAO</td><td>=</td></tr>
+        <tr><td>NUM_INT</td><td>10</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>ID</td><td>y</td></tr>
+        <tr><td>ATRIBUICAO</td><td>=</td></tr>
+        <tr><td>NUM_REAL</td><td>3.14</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>ID</td><td>resultado</td></tr>
+        <tr><td>ATRIBUICAO</td><td>=</td></tr>
+        <tr><td>ID</td><td>x</td></tr>
+        <tr><td>MAIS</td><td>+</td></tr>
+        <tr><td>ID</td><td>y</td></tr>
+        <tr><td>MULT</td><td>*</td></tr>
+        <tr><td>NUM_INT</td><td>2</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>ID</td><td>resultado</td></tr>
+        <tr><td>ATRIBUICAO</td><td>=</td></tr>
+        <tr><td>ABRE_PAREN</td><td>(</td></tr>
+        <tr><td>ID</td><td>x</td></tr>
+        <tr><td>MAIS</td><td>+</td></tr>
+        <tr><td>ID</td><td>y</td></tr>
+        <tr><td>FECHA_PAREN</td><td>)</td></tr>
+        <tr><td>MULT</td><td>*</td></tr>
+        <tr><td>NUM_INT</td><td>2</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+        <tr><td>ID</td><td>resultado</td></tr>
+        <tr><td>ATRIBUICAO</td><td>=</td></tr>
+        <tr><td>ID</td><td>resultado</td></tr>
+        <tr><td>DIV</td><td>/</td></tr>
+        <tr><td>NUM_INT</td><td>2</td></tr>
+        <tr><td>PONTO_VIRGULA</td><td>;</td></tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

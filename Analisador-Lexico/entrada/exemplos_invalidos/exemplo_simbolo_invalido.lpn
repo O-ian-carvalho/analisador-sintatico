@@ -1,0 +1,32 @@
+inteiro quantidade;
+inteiro estoqueMinimo;
+real precoUnitario;
+real valorTotal;
+texto descricao;
+texto situacao;
+
+quantidade = 8;
+estoqueMinimo = 3;
+precoUnitario = 12.30;
+valorTotal = quantidade * precoUnitario;
+descricao = "lote principal";
+situacao = "em analise";
+
+se (quantidade > estoqueMinimo && valorTotal >= 90.00) {
+    situacao = "liberado para expedicao";
+} senao {
+    situacao = "revisar pedido";
+}
+
+enquanto (quantidade > 0) {
+    quantidade = quantidade - 1;
+}
+
+escolha (situacao) {
+    caso "liberado para expedicao":
+        descricao = "saida autorizada";
+    padrao:
+        descricao = "saida bloqueada";
+}
+
+#

@@ -1,0 +1,2 @@
+// String fora do subconjunto LL(1) -> erro sintatico
+x = "texto invalido";

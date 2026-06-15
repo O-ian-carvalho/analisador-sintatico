@@ -1,0 +1,69 @@
+{
+  "tipo": "Programa",
+  "comandos": [
+    {
+      "tipo": "Declaracao",
+      "tipo_variavel": "inteiro",
+      "nome": "x",
+      "linha": 1,
+      "coluna": 1
+    },
+    {
+      "tipo": "Declaracao",
+      "tipo_variavel": "real",
+      "nome": "y",
+      "linha": 2,
+      "coluna": 1
+    },
+    {
+      "tipo": "Atribuicao",
+      "nome": "x",
+      "expressao": {
+        "tipo": "Numero",
+        "valor": 10,
+        "tipo_valor": "num_int",
+        "linha": 4,
+        "coluna": 5
+      },
+      "linha": 4,
+      "coluna": 1
+    },
+    {
+      "tipo": "Atribuicao",
+      "nome": "resultado",
+      "expressao": {
+        "tipo": "ExpressaoBinaria",
+        "operador": "+",
+        "esquerda": {
+          "tipo": "Identificador",
+          "nome": "x",
+          "linha": 5,
+          "coluna": 13
+        },
+        "direita": {
+          "tipo": "ExpressaoBinaria",
+          "operador": "*",
+          "esquerda": {
+            "tipo": "Identificador",
+            "nome": "y",
+            "linha": 5,
+            "coluna": 17
+          },
+          "direita": {
+            "tipo": "Numero",
+            "valor": 2,
+            "tipo_valor": "num_int",
+            "linha": 5,
+            "coluna": 21
+          },
+          "linha": 5,
+          "coluna": 19
+        },
+        "linha": 5,
+        "coluna": 15
+      },
+      "linha": 5,
+      "coluna": 1
+    }
+  ]
+}

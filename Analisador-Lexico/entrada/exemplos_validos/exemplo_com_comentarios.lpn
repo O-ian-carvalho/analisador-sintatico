@@ -1,0 +1,41 @@
+inteiro indice;
+inteiro limite;
+real fatorAjuste;
+texto status;
+texto mensagemAuditoria;
+
+// inicializacao do processo principal
+indice = 0;
+limite = 6;
+fatorAjuste = 1.5;
+status = "preparando";
+mensagemAuditoria = "inicio registrado";
+
+/* repeticao de teste com comentario de bloco
+   usada para simular varias etapas do processamento */
+enquanto (indice < limite) {
+    indice = indice + 1;
+    fatorAjuste = fatorAjuste + 0.5;
+
+    se (indice == 2) {
+        status = "validando";
+    } senao {
+        status = "executando";
+    }
+}
+
+// consolidacao do resultado
+se (indice >= limite && fatorAjuste > 3.0) {
+    mensagemAuditoria = "processo consistente";
+} senao {
+    mensagemAuditoria = "processo incompleto";
+}
+
+escolha (indice) {
+    caso 4:
+        status = "encerrado parcialmente";
+    caso 6:
+        status = "finalizado com sucesso";
+    padrao:
+        status = "indefinido";
+}

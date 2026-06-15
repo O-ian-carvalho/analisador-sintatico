@@ -1,0 +1,33 @@
+inteiro alunosPresentes;
+inteiro alunosTotais;
+real mediaGeral;
+real percentualPresenca;
+texto situacaoFinal;
+texto observacao;
+
+alunosPresentes = 28;
+alunosTotais = 30;
+mediaGeral = 7.8;
+percentualPresenca = 93.3;
+situacaoFinal = "em analise";
+observacao = "nenhuma";
+
+se (alunosPresentes >= 25 && mediaGeral >= 7.0) {
+    situacaoFinal = "aprovada";
+    observacao = "turma dentro da meta";
+} senao {
+    situacaoFinal = "revisao";
+    observacao = "verificar desempenho geral";
+}
+
+enquanto (alunosPresentes < alunosTotais) {
+    alunosPresentes = alunosPresentes + 1;
+    percentualPresenca = percentualPresenca + 0.2;
+}
+
+escolha (alunosPresentes) {
+    caso 30:
+        observacao = "presenca completa";
+    padrao:
+        observacao = "presenca parcial";
+}

@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Executar Lexer LPN",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/lexer_lpn.py",
+            "console": "internalConsole",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": true
+        }
+    ]
+}

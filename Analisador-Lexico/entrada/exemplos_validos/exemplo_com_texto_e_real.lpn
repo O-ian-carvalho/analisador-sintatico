@@ -1,0 +1,43 @@
+real subtotal;
+real descontoPromocional;
+real taxaEntrega;
+real totalParcial;
+real totalFinal;
+texto categoriaCliente;
+texto mensagemSistema;
+texto statusPedido;
+
+subtotal = 249.90;
+descontoPromocional = 35.40;
+taxaEntrega = 18.75;
+totalParcial = subtotal - descontoPromocional;
+totalFinal = totalParcial + taxaEntrega;
+categoriaCliente = "ouro";
+mensagemSistema = "pedido iniciado";
+statusPedido = "aguardando";
+
+se (totalFinal > 200.00 || categoriaCliente == "vip") {
+    mensagemSistema = "fluxo prioritario";
+    statusPedido = "em separacao";
+} senao {
+    mensagemSistema = "fluxo comum";
+    statusPedido = "em fila";
+}
+
+enquanto (taxaEntrega > 10.00) {
+    taxaEntrega = taxaEntrega - 1.25;
+    totalFinal = totalParcial + taxaEntrega;
+}
+
+se (!(totalFinal < 150.00) && descontoPromocional != 0.00) {
+    mensagemSistema = "beneficio mantido";
+}
+
+escolha (statusPedido) {
+    caso "em separacao":
+        mensagemSistema = "pedido quase pronto";
+    caso "em fila":
+        mensagemSistema = "aguarde processamento";
+    padrao:
+        mensagemSistema = "status desconhecido";
+}

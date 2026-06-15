@@ -1,0 +1,34 @@
+inteiro x;
+real y;
+texto mensagem;
+inteiro i;
+
+x = 10;
+y = 3.14;
+mensagem = "Ola, LPN!";
+
+funcao soma(a, b) {
+    retorne a + b;
+}
+
+procedimento mostrar() {
+    se (x >= 10 && y != 0) {
+        mensagem = "valor valido";
+    } senao {
+        mensagem = "valor invalido";
+    }
+}
+
+enquanto (x < 20) {
+    x = x + 1;
+    continue;
+}
+
+para (i = 0; i < 3; i = i + 1) {
+    escolha (i) {
+        caso 1:
+            pare;
+        padrao:
+            mensagem = "iteracao";
+    }
+}

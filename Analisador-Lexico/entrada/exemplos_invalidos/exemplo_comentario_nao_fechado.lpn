@@ -1,0 +1,24 @@
+inteiro totalItens;
+inteiro itensProcessados;
+real valorAcumulado;
+texto mensagem;
+texto faseAtual;
+
+totalItens = 15;
+itensProcessados = 0;
+valorAcumulado = 0.0;
+mensagem = "carga iniciada";
+faseAtual = "preparacao";
+
+enquanto (itensProcessados < totalItens) {
+    itensProcessados = itensProcessados + 1;
+    valorAcumulado = valorAcumulado + 4.75;
+}
+
+/* fechamento do lote principal
+   consolidacao dos registros
+   verificacao de divergencias
+se (valorAcumulado >= 50.00) {
+    faseAtual = "conferencia";
+    mensagem = "lote com valor relevante";
+}

@@ -1,0 +1,4 @@
+// Token SE fora do subconjunto LL(1) -> erro sintatico
+se (x > 0) {
+    x = 1;
+}

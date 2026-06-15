@@ -1,0 +1,158 @@
+{
+  "tipo": "Programa",
+  "comandos": [
+    {
+      "tipo": "Declaracao",
+      "tipo_variavel": "inteiro",
+      "nome": "x",
+      "linha": 1,
+      "coluna": 1
+    },
+    {
+      "tipo": "Declaracao",
+      "tipo_variavel": "real",
+      "nome": "y",
+      "linha": 2,
+      "coluna": 1
+    },
+    {
+      "tipo": "Declaracao",
+      "tipo_variavel": "texto",
+      "nome": "mensagem",
+      "linha": 3,
+      "coluna": 1
+    },
+    {
+      "tipo": "Declaracao",
+      "tipo_variavel": "inteiro",
+      "nome": "resultado",
+      "linha": 4,
+      "coluna": 1
+    },
+    {
+      "tipo": "Atribuicao",
+      "nome": "x",
+      "expressao": {
+        "tipo": "Numero",
+        "valor": 10,
+        "tipo_valor": "num_int",
+        "linha": 6,
+        "coluna": 5
+      },
+      "linha": 6,
+      "coluna": 1
+    },
+    {
+      "tipo": "Atribuicao",
+      "nome": "y",
+      "expressao": {
+        "tipo": "Numero",
+        "valor": 3.14,
+        "tipo_valor": "num_real",
+        "linha": 7,
+        "coluna": 5
+      },
+      "linha": 7,
+      "coluna": 1
+    },
+    {
+      "tipo": "Atribuicao",
+      "nome": "resultado",
+      "expressao": {
+        "tipo": "ExpressaoBinaria",
+        "operador": "+",
+        "esquerda": {
+          "tipo": "Identificador",
+          "nome": "x",
+          "linha": 9,
+          "coluna": 13
+        },
+        "direita": {
+          "tipo": "ExpressaoBinaria",
+          "operador": "*",
+          "esquerda": {
+            "tipo": "Identificador",
+            "nome": "y",
+            "linha": 9,
+            "coluna": 17
+          },
+          "direita": {
+            "tipo": "Numero",
+            "valor": 2,
+            "tipo_valor": "num_int",
+            "linha": 9,
+            "coluna": 21
+          },
+          "linha": 9,
+          "coluna": 19
+        },
+        "linha": 9,
+        "coluna": 15
+      },
+      "linha": 9,
+      "coluna": 1
+    },
+    {
+      "tipo": "Atribuicao",
+      "nome": "resultado",
+      "expressao": {
+        "tipo": "ExpressaoBinaria",
+        "operador": "*",
+        "esquerda": {
+          "tipo": "ExpressaoBinaria",
+          "operador": "+",
+          "esquerda": {
+            "tipo": "Identificador",
+            "nome": "x",
+            "linha": 10,
+            "coluna": 14
+          },
+          "direita": {
+            "tipo": "Identificador",
+            "nome": "y",
+            "linha": 10,
+            "coluna": 18
+          },
+          "linha": 10,
+          "coluna": 16
+        },
+        "direita": {
+          "tipo": "Numero",
+          "valor": 2,
+          "tipo_valor": "num_int",
+          "linha": 10,
+          "coluna": 23
+        },
+        "linha": 10,
+        "coluna": 21
+      },
+      "linha": 10,
+      "coluna": 1
+    },
+    {
+      "tipo": "Atribuicao",
+      "nome": "resultado",
+      "expressao": {
+        "tipo": "ExpressaoBinaria",
+        "operador": "/",
+        "esquerda": {
+          "tipo": "Identificador",
+          "nome": "resultado",
+          "linha": 11,
+          "coluna": 13
+        },
+        "direita": {
+          "tipo": "Numero",
+          "valor": 2,
+          "tipo_valor": "num_int",
+          "linha": 11,
+          "coluna": 25
+        },
+        "linha": 11,
+        "coluna": 23
+      },
+      "linha": 11,
+      "coluna": 1
+    }
+  ]
+}

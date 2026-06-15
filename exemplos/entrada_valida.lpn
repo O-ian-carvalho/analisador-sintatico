@@ -1,0 +1,11 @@
+inteiro x;
+real y;
+texto mensagem;
+inteiro resultado;
+
+x = 10;
+y = 3.14;
+
+resultado = x + y * 2;
+resultado = (x + y) * 2;
+resultado = resultado / 2;

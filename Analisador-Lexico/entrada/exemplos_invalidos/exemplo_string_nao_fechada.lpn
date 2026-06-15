@@ -1,0 +1,22 @@
+inteiro tentativas;
+inteiro etapaAtual;
+real percentual;
+texto mensagem;
+texto status;
+
+tentativas = 2;
+etapaAtual = 4;
+percentual = 87.5;
+status = "em execucao";
+mensagem = "processando etapa final com consolidacao pendente;
+
+se (tentativas >= 2 && percentual > 80.0) {
+    status = "quase concluido";
+}
+
+escolha (etapaAtual) {
+    caso 4:
+        status = "fechamento";
+    padrao:
+        status = "indefinido";
+}

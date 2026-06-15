@@ -1,0 +1,2 @@
+// Expressao incompleta (falta operando direito) -> erro sintatico
+x = a + ;

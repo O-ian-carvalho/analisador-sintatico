@@ -1,0 +1,128 @@
+----------------------------------------------------------------
+TOKENS (terminais) definidos pelo analisador léxico:
+----------------------------------------------------------------
+
+inteiro            -> palavra reservada para declaração
+real               -> palavra reservada para declaração
+texto              -> palavra reservada para declaração
+
+id                 -> identificador: [a-zA-Z_][a-zA-Z0-9_]*
+num_int            -> número inteiro: [0-9]+
+num_real           -> número real: [0-9]+\.[0-9]+
+
+mais               -> +
+menos              -> -
+multiplicacao      -> *
+divisao            -> /
+modulo             -> %
+
+atribuicao         -> =
+
+ponto_virgula      -> ;
+abre_parenteses    -> (
+fecha_parenteses   -> )
+
+----------------------------------------------------------------
+1. GRAMÁTICA ORIGINAL (com recursão à esquerda)
+----------------------------------------------------------------
+
+Representa declarações, atribuições e expressões aritméticas.
+
+P  -> L
+
+L  -> L C | C
+
+C  -> inteiro id ponto_virgula
+    | real id ponto_virgula
+    | texto id ponto_virgula
+    | id atribuicao E ponto_virgula
+
+E  -> E mais T
+    | E menos T
+    | T
+
+T  -> T multiplicacao F
+    | T divisao F
+    | T modulo F
+    | F
+
+F  -> abre_parenteses E fecha_parenteses
+    | id
+    | num_int
+    | num_real
+
+Problema: E e T possuem RECURSÃO À ESQUERDA, que é
+incompatível com parsers LL (top-down).
+
+----------------------------------------------------------------
+2. ELIMINAÇÃO DA RECURSÃO À ESQUERDA
+----------------------------------------------------------------
+
+Aplica-se a regra:
+
+    A -> A α | β    =>    A -> β A'
+                         A' -> α A' | ε
+
+Para E:
+
+E -> E mais T | E menos T | T
+
+=>
+
+E  -> T E1
+
+E1 -> mais T E1
+    | menos T E1
+    | ε
+
+
+Para T:
+
+T -> T multiplicacao F
+   | T divisao F
+   | T modulo F
+   | F
+
+=>
+
+T  -> F T1
+
+T1 -> multiplicacao F T1
+    | divisao F T1
+    | modulo F T1
+    | ε
+
+----------------------------------------------------------------
+3. GRAMÁTICA LL(1) — SEM RECURSÃO À ESQUERDA
+----------------------------------------------------------------
+
+Esta é a gramática utilizada pelo parser. Ela já possui
+a estrutura necessária para análise top-down determinística.
+
+(0)  P  -> L
+
+(1)  L  -> C L
+(2)  L  -> ε
+
+(3)  C  -> inteiro id ponto_virgula
+(4)  C  -> real id ponto_virgula
+(5)  C  -> texto id ponto_virgula
+(6)  C  -> id atribuicao E ponto_virgula
+
+(7)  E  -> T E1
+
+(8)  E1 -> mais T E1
+(9)  E1 -> menos T E1
+(10) E1 -> ε
+
+(11) T  -> F T1
+
+(12) T1 -> multiplicacao F T1
+(13) T1 -> divisao F T1
+(14) T1 -> modulo F T1
+(15) T1 -> ε
+
+(16) F  -> abre_parenteses E fecha_parenteses
+(17) F  -> id
+(18) F  -> num_int
+(19) F  -> num_real
